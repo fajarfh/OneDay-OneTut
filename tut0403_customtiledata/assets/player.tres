@@ -1,0 +1,37 @@
+[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://clm8fo3nmb248"]
+
+[ext_resource type="Texture2D" uid="uid://d3ocd1o01ow36" path="res://assets/female_tilesheet.png" id="1_wcl28"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ohge"]
+atlas = ExtResource("1_wcl28")
+region = Rect2(0, 0, 80, 110)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yqqpu"]
+atlas = ExtResource("1_wcl28")
+region = Rect2(0, 110, 80, 110)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p5s84"]
+atlas = ExtResource("1_wcl28")
+region = Rect2(80, 110, 80, 110)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ohge")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yqqpu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p5s84")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]

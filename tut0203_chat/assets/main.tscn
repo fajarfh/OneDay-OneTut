@@ -1,0 +1,188 @@
+[gd_scene load_steps=16 format=3 uid="uid://bqptfsjlubcco"]
+
+[ext_resource type="Texture2D" uid="uid://c33w1xqg4it40" path="res://assets/uipackSpace_sheet.png" id="1_3wcy1"]
+[ext_resource type="Script" path="res://assets/main.gd" id="1_f7cge"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xgr7g"]
+atlas = ExtResource("1_3wcy1")
+region = Rect2(200, 300, 100, 100)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p57hk"]
+texture = SubResource("AtlasTexture_xgr7g")
+texture_margin_left = 5.0
+texture_margin_top = 9.0
+texture_margin_right = 5.0
+texture_margin_bottom = 9.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_at23o"]
+atlas = ExtResource("1_3wcy1")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kgldh"]
+texture = SubResource("AtlasTexture_at23o")
+texture_margin_left = 8.0
+texture_margin_top = 8.0
+texture_margin_right = 8.0
+texture_margin_bottom = 7.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_m73e5"]
+load_path = "res://.godot/imported/uipackSpace_sheet.png-4e2eed7ae84438713a98f58047c66ed2.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4dc2j"]
+texture = SubResource("CompressedTexture2D_m73e5")
+texture_margin_left = 4.0
+texture_margin_top = 5.0
+texture_margin_right = 4.0
+texture_margin_bottom = 5.0
+region_rect = Rect2(380, 262, 19, 26)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8a0ra"]
+load_path = "res://.godot/imported/uipackSpace_sheet.png-4e2eed7ae84438713a98f58047c66ed2.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_luwc2"]
+texture = SubResource("CompressedTexture2D_8a0ra")
+texture_margin_left = 4.0
+texture_margin_top = 5.0
+texture_margin_right = 4.0
+texture_margin_bottom = 5.0
+region_rect = Rect2(380, 262, 19, 26)
+modulate_color = Color(0.393086, 0.393086, 0.393085, 1)
+
+[sub_resource type="InputEventKey" id="InputEventKey_e8noe"]
+keycode = 4194309
+
+[sub_resource type="Shortcut" id="Shortcut_44qfx"]
+events = [SubResource("InputEventKey_e8noe")]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tcj7l"]
+texture = ExtResource("1_3wcy1")
+texture_margin_left = 4.0
+texture_margin_top = 5.0
+texture_margin_right = 4.0
+texture_margin_bottom = 5.0
+region_rect = Rect2(384, 450, 19, 26)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_whpxl"]
+load_path = "res://.godot/imported/uipackSpace_sheet.png-4e2eed7ae84438713a98f58047c66ed2.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lbbb5"]
+texture = SubResource("CompressedTexture2D_whpxl")
+texture_margin_left = 4.0
+texture_margin_top = 5.0
+texture_margin_right = 4.0
+texture_margin_bottom = 5.0
+region_rect = Rect2(384, 450, 19, 26)
+modulate_color = Color(0.412152, 0.412152, 0.412152, 1)
+
+[node name="main" type="Node2D"]
+script = ExtResource("1_f7cge")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1152.0
+offset_bottom = 648.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.33
+anchor_right = 0.67
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 20.0
+theme_override_constants/separation = 30
+alignment = 2
+
+[node name="TextEdit" type="TextEdit" parent="Control/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 400)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_p57hk")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Control/HBoxContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Message" type="LineEdit" parent="Control/HBoxContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 1
+theme_override_colors/font_placeholder_color = Color(0.639216, 0.768627, 0.815686, 1)
+theme_override_colors/font_color = Color(0.268048, 0.769694, 0.514845, 1)
+theme_override_styles/normal = SubResource("StyleBoxTexture_kgldh")
+placeholder_text = "Message"
+max_length = 400
+clear_button_enabled = true
+
+[node name="Send" type="Button" parent="Control/HBoxContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_pressed_color = Color(0.372549, 0.694118, 0.227451, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.372549, 0.694118, 0.227451, 1)
+theme_override_constants/outline_size = 3
+theme_override_styles/hover = SubResource("StyleBoxTexture_4dc2j")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_luwc2")
+theme_override_styles/normal = SubResource("StyleBoxTexture_4dc2j")
+shortcut = SubResource("Shortcut_44qfx")
+text = "SEND"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Host" type="Button" parent="Control/HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_pressed_color = Color(0.109804, 0.521569, 0.694118, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.109804, 0.521569, 0.694118, 1)
+theme_override_constants/outline_size = 3
+theme_override_styles/hover = SubResource("StyleBoxTexture_tcj7l")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_lbbb5")
+theme_override_styles/normal = SubResource("StyleBoxTexture_tcj7l")
+text = "HOST"
+
+[node name="Join" type="Button" parent="Control/HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_pressed_color = Color(0.109804, 0.521569, 0.694118, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.109804, 0.521569, 0.694118, 1)
+theme_override_constants/outline_size = 3
+theme_override_styles/hover = SubResource("StyleBoxTexture_tcj7l")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_lbbb5")
+theme_override_styles/normal = SubResource("StyleBoxTexture_tcj7l")
+text = "JOIN"
+
+[node name="Username" type="LineEdit" parent="Control/HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_placeholder_color = Color(0.639216, 0.768627, 0.815686, 1)
+theme_override_colors/font_color = Color(0.268048, 0.769694, 0.514845, 1)
+theme_override_styles/normal = SubResource("StyleBoxTexture_kgldh")
+placeholder_text = "Username"
+max_length = 400
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(575, 325)
+
+[connection signal="pressed" from="Control/HBoxContainer/VBoxContainer/HBoxContainer2/Send" to="." method="_on_send_pressed"]
+[connection signal="pressed" from="Control/HBoxContainer/VBoxContainer/HBoxContainer/Host" to="." method="_on_host_pressed"]
+[connection signal="pressed" from="Control/HBoxContainer/VBoxContainer/HBoxContainer/Join" to="." method="_on_join_pressed"]

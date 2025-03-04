@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://bdu5andiaxuho"]
+
+[ext_resource type="Texture2D" uid="uid://cnr4wa3axkfqo" path="res://assets/Sample.png" id="1_qraut"]
+[ext_resource type="Script" path="res://assets/main.gd" id="1_y5lgq"]
+[ext_resource type="PackedScene" uid="uid://xjtg5q0h31be" path="res://assets/key_transition.tscn" id="3_00iy3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qdkvk"]
+bg_color = Color(1, 0.18242, 0.757034, 1)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_y5lgq")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_qraut")
+
+[node name="KeyTransition" parent="." instance=ExtResource("3_00iy3")]
+layout_mode = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 97.2056
+offset_top = 486.251
+offset_right = 233.206
+offset_bottom = 558.251
+theme_override_styles/normal = SubResource("StyleBoxFlat_qdkvk")
+text = "SWIPEIN/OUT"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

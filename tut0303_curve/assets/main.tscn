@@ -1,0 +1,54 @@
+[gd_scene load_steps=8 format=3 uid="uid://b8pcetkmwmmyi"]
+
+[ext_resource type="Script" path="res://assets/main.gd" id="1_36706"]
+[ext_resource type="SpriteFrames" uid="uid://26s6sx3xn3iy" path="res://assets/plane.tres" id="1_i3bag"]
+[ext_resource type="Script" path="res://assets/character_body_2d.gd" id="1_juhwv"]
+
+[sub_resource type="Curve" id="Curve_spn3m"]
+_data = [Vector2(0.0105263, 1), 0.0, 0.0, 0, 0, Vector2(0.247368, 1), -0.0239991, -0.0239991, 0, 0, Vector2(0.747368, 0.494505), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_sny08"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 345, 475, 0, 0, 0, 0, 816, 519)
+}
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_2qtkk"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.236842, 0.21978), 6.42435, 6.42435, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gbwv7"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_36706")
+curve_this = SubResource("Curve_spn3m")
+hit_scan_range = 500.0
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_sny08")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." node_paths=PackedStringArray("path")]
+position = Vector2(661.95, 407.604)
+motion_mode = 1
+script = ExtResource("1_juhwv")
+path = NodePath("../Path2D")
+position_curve = SubResource("Curve_2qtkk")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+sprite_frames = ExtResource("1_i3bag")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.389733
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("CircleShape2D_gbwv7")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 324)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 332.362
+offset_top = 159.037
+offset_right = 372.362
+offset_bottom = 182.037
