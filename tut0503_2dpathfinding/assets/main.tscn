@@ -1,0 +1,111 @@
+[gd_scene load_steps=9 format=3 uid="uid://b8pcetkmwmmyi"]
+
+[ext_resource type="Script" path="res://assets/main.gd" id="1_36706"]
+[ext_resource type="SpriteFrames" uid="uid://26s6sx3xn3iy" path="res://assets/plane.tres" id="1_i3bag"]
+[ext_resource type="Script" path="res://assets/character_body_2d.gd" id="1_juhwv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gbwv7"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_vymu6"]
+vertices = PackedVector2Array(249.461, 85.3672, 323.523, 122.008, 215.281, 208.977, 131.68, 220.109, 202.82, 416.648, 113.227, 436.563, 209.742, 593.273, 273.18, 526.453, 544.07, 609.977, 548.711, 555.023, 892.773, 595.172, 856.867, 540.828, 1035.88, 456.828, 956.094, 456.711, 962.578, 166.547, 902.719, 221.219, 762.102, 92.5391, 740.211, 138.5)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(3, 2, 4, 5), PackedInt32Array(6, 5, 4, 7), PackedInt32Array(8, 6, 7, 9, 10), PackedInt32Array(10, 9, 11), PackedInt32Array(12, 10, 11, 13), PackedInt32Array(14, 12, 13, 15), PackedInt32Array(16, 14, 15, 17)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(247, 73, 122, 216, 103, 439, 204, 603, 544, 620, 897, 605, 1047, 460, 971, 159, 757, 80, 727, 143, 894, 228, 945, 453, 853, 531, 549, 545, 279, 517, 213, 414, 225, 214, 342, 120)])
+
+[sub_resource type="Animation" id="Animation_201ng"]
+resource_name = "blink"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.266667, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:texture_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.266667, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.2, 0.2), Vector2(1, 1), Vector2(0.2, 0.2)]
+}
+
+[sub_resource type="Animation" id="Animation_3rlew"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:texture_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_p20ec"]
+_data = {
+"RESET": SubResource("Animation_3rlew"),
+"blink": SubResource("Animation_201ng")
+}
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_36706")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(258.026, 125.019)
+motion_mode = 1
+script = ExtResource("1_juhwv")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+sprite_frames = ExtResource("1_i3bag")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.389733
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("CircleShape2D_gbwv7")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="CharacterBody2D"]
+path_postprocessing = 1
+debug_enabled = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 324)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_vymu6")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(-1, -1, 0, 33, 11, 18, 44, 40, 52, 30, 27, 11, 39, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Polygon2D"]
+libraries = {
+"": SubResource("AnimationLibrary_p20ec")
+}
+
+[connection signal="target_reached" from="CharacterBody2D/NavigationAgent2D" to="CharacterBody2D" method="_on_navigation_agent_2d_target_reached"]
