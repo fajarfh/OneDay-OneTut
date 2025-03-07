@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SpeedUpgrade" load_steps=3 format=3 uid="uid://s30y06t3q4b5"]
+
+[ext_resource type="Script" path="res://assets/strategy/SpeedUpgrade.gd" id="1_eb1t1"]
+[ext_resource type="Texture2D" uid="uid://b35c42fj4gme1" path="res://assets/strategy/tes1.tres" id="2_svsaw"]
+
+[resource]
+script = ExtResource("1_eb1t1")
+speed_multiplier = 2.0
+texture = ExtResource("2_svsaw")
+upgrade_text = "Speed"

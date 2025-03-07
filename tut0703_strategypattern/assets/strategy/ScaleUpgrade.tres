@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ScaleUpgrade" load_steps=3 format=3 uid="uid://ccry21ym3fjft"]
+
+[ext_resource type="Script" path="res://assets/strategy/ScaleUpgrade.gd" id="1_wauvl"]
+[ext_resource type="Texture2D" uid="uid://cy4an1cjkfcjo" path="res://assets/strategy/tes2.tres" id="2_mrcxi"]
+
+[resource]
+script = ExtResource("1_wauvl")
+scale_multiplier = 2.0
+timer = 5.0
+texture = ExtResource("2_mrcxi")
+upgrade_text = "Scale"

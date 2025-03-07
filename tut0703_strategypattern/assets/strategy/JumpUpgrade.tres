@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="JumpUpgrade" load_steps=3 format=3 uid="uid://d27rtjgos8m8r"]
+
+[ext_resource type="Script" path="res://assets/strategy/JumpUpgrade.gd" id="1_g5nbe"]
+[ext_resource type="Texture2D" uid="uid://ddw37sy5ss2gh" path="res://assets/strategy/tes3.tres" id="2_n0g3w"]
+
+[resource]
+script = ExtResource("1_g5nbe")
+jump_multiplier = 2.0
+texture = ExtResource("2_n0g3w")
+upgrade_text = "Jump"

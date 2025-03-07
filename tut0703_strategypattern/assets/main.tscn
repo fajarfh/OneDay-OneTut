@@ -1,0 +1,230 @@
+[gd_scene load_steps=17 format=4 uid="uid://dx2cq4sn2xfv4"]
+
+[ext_resource type="Texture2D" uid="uid://c25yl08xe47kh" path="res://assets/platformerPack_industrial_tilesheet.png" id="1_frqcm"]
+[ext_resource type="Texture2D" uid="uid://4irtqktafkkx" path="res://assets/characters_packed.png" id="2_h71u2"]
+[ext_resource type="Script" path="res://assets/character_body_2d.gd" id="2_j2jgw"]
+[ext_resource type="PackedScene" uid="uid://cvs4w8dwhub5a" path="res://assets/moving_plat.tscn" id="4_7fdxt"]
+[ext_resource type="PackedScene" uid="uid://bb30ay1el426q" path="res://assets/strategy/upgrade.tscn" id="5_rsgvo"]
+[ext_resource type="Resource" uid="uid://dnf310d0huxhk" path="res://assets/strategy/RageUpdate.tres" id="6_gcc3r"]
+[ext_resource type="Resource" uid="uid://ccry21ym3fjft" path="res://assets/strategy/ScaleUpgrade.tres" id="7_i7re5"]
+[ext_resource type="Resource" uid="uid://d27rtjgos8m8r" path="res://assets/strategy/JumpUpgrade.tres" id="8_drctr"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_33tnr"]
+resource_name = "map"
+texture = ExtResource("1_frqcm")
+texture_region_size = Vector2i(70, 70)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+11:0/0 = 0
+12:0/0 = 0
+13:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+11:1/0 = 0
+12:1/0 = 0
+13:1/0 = 0
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-35, -35, 35, -35, 35, 35, -35, 35)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-35, -35, 35, -35, 35, 35, -35, 35)
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+10:2/0 = 0
+11:2/0 = 0
+12:2/0 = 0
+13:2/0 = 0
+0:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-35, -35, 35, -35, 35, 35, -35, 35)
+1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-35, -35, 35, -35, 35, 35, -35, 35)
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+6:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-35, -35, 35, -35, 35, -4.5, -35, -4.24264)
+7:3/0 = 0
+7:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-35, -35, 35, -35, 35, -4.5, -35, -4.24264)
+8:3/0 = 0
+8:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-35, -35, 35, -35, 35, -4.5, -35, -4.24264)
+9:3/0 = 0
+10:3/0 = 0
+11:3/0 = 0
+12:3/0 = 0
+13:3/0 = 0
+0:4/0 = 0
+0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-35, -35, 35, -35, 35, 35, -35, 35)
+1:4/0 = 0
+1:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-35, -35, 35, -35, 35, 35, -35, 35)
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+11:4/0 = 0
+12:4/0 = 0
+13:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+11:5/0 = 0
+12:5/0 = 0
+13:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+9:6/0 = 0
+10:6/0 = 0
+11:6/0 = 0
+12:6/0 = 0
+13:6/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+9:7/0 = 0
+10:7/0 = 0
+11:7/0 = 0
+12:7/0 = 0
+13:7/0 = 0
+0:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_crnkf"]
+tile_size = Vector2i(70, 70)
+physics_layer_0/collision_layer = 1
+sources/1 = SubResource("TileSetAtlasSource_33tnr")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_skhsv"]
+atlas = ExtResource("2_h71u2")
+region = Rect2(96, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bx20m"]
+atlas = ExtResource("2_h71u2")
+region = Rect2(120, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nt81g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_skhsv")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bx20m")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_11sib"]
+size = Vector2(20, 23.5693)
+
+[sub_resource type="Curve2D" id="Curve2D_w5x3r"]
+_data = {
+"points": PackedVector2Array(0, 0, -100, 0, -30, -200, 0, 0, 0, 100, -130, -100, 0, 0, 100, 0, -30, 0, 0, 0, 0, 0, 70, -100, 100, 0, 0, 0, -30, -200)
+}
+point_count = 5
+
+[sub_resource type="Curve2D" id="Curve2D_ig5jb"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, -20, 0, 0, 0, 0, -425, -20)
+}
+point_count = 2
+
+[node name="main" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAAAAcAAQAAAAQAAAABAAcAAQAAAAQAAAACAAcAAQAAAAQAAAADAAcAAQAAAAQAAAAEAAcAAQAAAAQAAAAFAAcAAQAAAAQAAAAGAAcAAQAAAAQAAAAHAAcAAQAAAAQAAAABAAYAAQAGAAMAAAACAAYAAQAHAAMAAAADAAYAAQAIAAMAAAAFAAYAAQAGAAMAAAAGAAYAAQAHAAMAAAAHAAYAAQAIAAMAAAAIAAcAAQAAAAQAAAAJAAcAAQAAAAQAAAAKAAcAAQAAAAQAAAALAAcAAQAAAAQAAAAMAAcAAQAAAAQAAAANAAcAAQAAAAQAAAAOAAcAAQAAAAQAAAAPAAcAAQAAAAQAAAA=")
+tile_set = SubResource("TileSet_crnkf")
+
+[node name="player" type="CharacterBody2D" parent="."]
+texture_filter = 1
+position = Vector2(290.772, 421.139)
+scale = Vector2(2, 2)
+script = ExtResource("2_j2jgw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="player"]
+position = Vector2(-0.386002, -12.007)
+sprite_frames = SubResource("SpriteFrames_nt81g")
+animation = &"idle"
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
+position = Vector2(-0.386002, -11.7912)
+shape = SubResource("RectangleShape2D_11sib")
+
+[node name="movplat1" parent="." instance=ExtResource("4_7fdxt")]
+position = Vector2(645, 353)
+curve = SubResource("Curve2D_w5x3r")
+speed = 100.0
+
+[node name="movplat2" parent="." instance=ExtResource("4_7fdxt")]
+position = Vector2(934, 403)
+curve = SubResource("Curve2D_ig5jb")
+loop = false
+
+[node name="Node2D" parent="." instance=ExtResource("5_rsgvo")]
+position = Vector2(402.425, 400)
+
+[node name="Node2D2" parent="." instance=ExtResource("5_rsgvo")]
+position = Vector2(197.753, 400)
+upgrade = ExtResource("6_gcc3r")
+
+[node name="Node2D3" parent="." instance=ExtResource("5_rsgvo")]
+position = Vector2(119.97, 400)
+upgrade = ExtResource("7_i7re5")
+
+[node name="Node2D4" parent="." instance=ExtResource("5_rsgvo")]
+position = Vector2(316.36, 470.386)
+upgrade = ExtResource("8_drctr")

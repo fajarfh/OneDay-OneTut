@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://ddw37sy5ss2gh"]
+
+[ext_resource type="Texture2D" uid="uid://c25yl08xe47kh" path="res://assets/platformerPack_industrial_tilesheet.png" id="1_jcgsl"]
+
+[resource]
+atlas = ExtResource("1_jcgsl")
+region = Rect2(710, 170, 50, 40)

@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://bb30ay1el426q"]
+
+[ext_resource type="Texture2D" uid="uid://b35c42fj4gme1" path="res://assets/strategy/tes1.tres" id="1_bvgr4"]
+[ext_resource type="Script" path="res://assets/strategy/upgrade.gd" id="1_i2vcv"]
+[ext_resource type="Resource" uid="uid://s30y06t3q4b5" path="res://assets/strategy/SpeedUpgrade.tres" id="2_brq8w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fcf7f"]
+size = Vector2(50.631, 39.6847)
+
+[node name="Node2D" type="Area2D" node_paths=PackedStringArray("label", "sprite")]
+script = ExtResource("1_i2vcv")
+label = NodePath("Label")
+sprite = NodePath("Sprite2D")
+upgrade = ExtResource("2_brq8w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_fcf7f")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_bvgr4")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -34.7152
+offset_top = -47.4988
+offset_right = 32.2848
+offset_bottom = -24.4988
+text = "Upgrade"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

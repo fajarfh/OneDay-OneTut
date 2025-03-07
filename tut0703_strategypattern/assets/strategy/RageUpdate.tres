@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="RageUpgrade" load_steps=3 format=3 uid="uid://dnf310d0huxhk"]
+
+[ext_resource type="Script" path="res://assets/strategy/RageUpgrade.gd" id="1_xvx74"]
+[ext_resource type="Texture2D" uid="uid://cgkch7q25q00a" path="res://assets/strategy/tes4.tres" id="2_iguf0"]
+
+[resource]
+script = ExtResource("1_xvx74")
+rage_color = Color(1, 0, 0, 1)
+texture = ExtResource("2_iguf0")
+upgrade_text = "Rage"
