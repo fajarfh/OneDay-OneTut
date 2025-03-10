@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://b8sta6iu1h44n"]
+
+[ext_resource type="Texture2D" uid="uid://dbjhx44lixb2" path="res://assets/mirror_transparent.png" id="1_uqtra"]
+[ext_resource type="Script" path="res://assets/mirror.gd" id="1_uwscm"]
+[ext_resource type="Texture2D" uid="uid://dphi8s6gsjx71" path="res://assets/SpriteSheet.png" id="2_5rksb"]
+[ext_resource type="Texture2D" uid="uid://c5rc4hf15j1pr" path="res://assets/mirror_mask.png" id="3_jxo05"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_02khg"]
+light_mode = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8fb2b"]
+size = Vector2(100.718, 133.227)
+
+[node name="Mirror" type="Node2D"]
+position = Vector2(-0.00540543, -50.9418)
+script = ExtResource("1_uwscm")
+
+[node name="mirror_sprite" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(4.6875, 4.6875)
+texture = ExtResource("1_uqtra")
+
+[node name="reflection_sprite" type="Sprite2D" parent="."]
+light_mask = 2
+visibility_layer = 2
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_02khg")
+position = Vector2(0, 18.8012)
+scale = Vector2(4, 4)
+texture = ExtResource("2_5rksb")
+flip_h = true
+hframes = 4
+vframes = 7
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+scale = Vector2(4.67509, 4.68374)
+blend_mode = 2
+range_item_cull_mask = 2
+shadow_color = Color(0, 0, 0, 0.156863)
+texture = ExtResource("3_jxo05")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-0.00540543, 0.261135)
+shape = SubResource("RectangleShape2D_8fb2b")
