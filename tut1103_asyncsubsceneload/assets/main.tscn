@@ -1,0 +1,162 @@
+[gd_scene load_steps=13 format=3 uid="uid://bdv25i5chl1hx"]
+
+[ext_resource type="PackedScene" uid="uid://dcjxyk7n3petk" path="res://assets/player.tscn" id="1_rkdd2"]
+[ext_resource type="Script" path="res://assets/main_game.gd" id="1_uj75v"]
+[ext_resource type="Texture2D" uid="uid://4irtqktafkkx" path="res://assets/characters_packed.png" id="2_h71u2"]
+[ext_resource type="PackedScene" uid="uid://dx2cq4sn2xfv4" path="res://assets/map1.tscn" id="2_s2wjf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v5g4y"]
+bg_color = Color(0.952941, 0.835294, 1, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0a20b"]
+atlas = ExtResource("2_h71u2")
+region = Rect2(72, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0chc1"]
+atlas = ExtResource("2_h71u2")
+region = Rect2(96, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lm4j8"]
+atlas = ExtResource("2_h71u2")
+region = Rect2(120, 48, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2qmfu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0a20b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0chc1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lm4j8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_giiuo"]
+resource_name = "auto"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.697, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_v8jim"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.697]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ooidv"]
+_data = {
+"RESET": SubResource("Animation_v8jim"),
+"auto": SubResource("Animation_giiuo")
+}
+
+[node name="game" type="Node"]
+
+[node name="MainScene" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_uj75v")
+
+[node name="map1" parent="MainScene" instance=ExtResource("2_s2wjf")]
+
+[node name="CharacterBody2D" parent="MainScene" instance=ExtResource("1_rkdd2")]
+visible = false
+z_index = 1
+position = Vector2(138.977, 233.099)
+collision_layer = 7
+collision_mask = 5
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -100.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 3
+size_flags_vertical = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 2
+
+[node name="Button" type="Button" parent="UI/HBoxContainer"]
+layout_mode = 2
+text = "EMERGENCY BUTTON"
+
+[node name="Panel" type="Panel" parent="."]
+visible = false
+z_index = 2
+custom_minimum_size = Vector2(1152, 648)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_v5g4y")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Panel"]
+texture_filter = 1
+position = Vector2(581.522, 336.902)
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_2qmfu")
+autoplay = "default"
+frame_progress = 0.665088
+
+[node name="Label" type="Label" parent="Panel/AnimatedSprite2D"]
+texture_filter = 1
+offset_left = -39.7195
+offset_top = 10.7029
+offset_right = 42.2805
+offset_bottom = 33.7029
+theme_override_colors/font_color = Color(0.968157, 0.462038, 0.857759, 1)
+theme_override_colors/font_shadow_color = Color(0.355314, 0.355314, 0.355314, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+text = "LOADING...."
+visible_characters = 7
+visible_ratio = 0.697
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Panel/AnimatedSprite2D/Label"]
+libraries = {
+"": SubResource("AnimationLibrary_ooidv")
+}
+autoplay = "auto"
+
+[connection signal="pressed" from="UI/HBoxContainer/Button" to="MainScene" method="_on_button_pressed"]
