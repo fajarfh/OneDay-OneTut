@@ -1,0 +1,1007 @@
+[gd_scene load_steps=20 format=4 uid="uid://dx2cq4sn2xfv4"]
+
+[ext_resource type="Texture2D" uid="uid://c25yl08xe47kh" path="res://assets/platformerPack_industrial_tilesheet.png" id="1_frqcm"]
+[ext_resource type="Texture2D" uid="uid://4irtqktafkkx" path="res://assets/characters_packed.png" id="2_h71u2"]
+[ext_resource type="Script" path="res://assets/character_body_2d.gd" id="2_j2jgw"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_33tnr"]
+resource_name = "map"
+texture = ExtResource("1_frqcm")
+texture_region_size = Vector2i(70, 70)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+11:0/0 = 0
+12:0/0 = 0
+13:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+11:1/0 = 0
+12:1/0 = 0
+13:1/0 = 0
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-35, -35, 35, -35, 35, 35, -35, 35)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-35, -35, 35, -35, 35, 35, -35, 35)
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+10:2/0 = 0
+11:2/0 = 0
+12:2/0 = 0
+13:2/0 = 0
+0:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-35, -35, 35, -35, 35, 35, -35, 35)
+1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-35, -35, 35, -35, 35, 35, -35, 35)
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+6:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-35, -35, 35, -35, 35, -4.5, -35, -4.24264)
+7:3/0 = 0
+7:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-35, -35, 35, -35, 35, -4.5, -35, -4.24264)
+8:3/0 = 0
+8:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-35, -35, 35, -35, 35, -4.5, -35, -4.24264)
+9:3/0 = 0
+10:3/0 = 0
+11:3/0 = 0
+12:3/0 = 0
+13:3/0 = 0
+0:4/0 = 0
+0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-35, -35, 35, -35, 35, 35, -35, 35)
+1:4/0 = 0
+1:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-35, -35, 35, -35, 35, 35, -35, 35)
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+11:4/0 = 0
+12:4/0 = 0
+13:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+11:5/0 = 0
+12:5/0 = 0
+13:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+9:6/0 = 0
+10:6/0 = 0
+11:6/0 = 0
+12:6/0 = 0
+13:6/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+9:7/0 = 0
+10:7/0 = 0
+11:7/0 = 0
+12:7/0 = 0
+13:7/0 = 0
+0:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_crnkf"]
+tile_size = Vector2i(70, 70)
+physics_layer_0/collision_layer = 3
+physics_layer_0/collision_mask = 3
+sources/1 = SubResource("TileSetAtlasSource_33tnr")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_skhsv"]
+atlas = ExtResource("2_h71u2")
+region = Rect2(96, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bx20m"]
+atlas = ExtResource("2_h71u2")
+region = Rect2(120, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nt81g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_skhsv")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bx20m")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_11sib"]
+size = Vector2(20, 23.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_abjw2"]
+size = Vector2(15.2449, 8.60785)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vjvvp"]
+atlas = ExtResource("1_frqcm")
+region = Rect2(420, 280, 70, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x2srw"]
+atlas = ExtResource("1_frqcm")
+region = Rect2(700, 280, 70, 70)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dd63f"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_say0j"]
+atlas = ExtResource("1_frqcm")
+region = Rect2(420, 140, 210, 22)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ryqx"]
+size = Vector2(209.388, 19.317)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1sxit"]
+atlas = ExtResource("1_frqcm")
+region = Rect2(420, 440, 70, 50)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wuj53"]
+size = Vector2(69.9835, 49.9844)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n0tgf"]
+size = Vector2(99.5377, 19.317)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rvdmc"]
+size = Vector2(120.873, 119.613)
+
+[node name="main" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAAAAIAAQAAAAIAAAABAAIAAQAAAAQAAAACAAIAAQAAAAQAAAACAAMAAQAAAAMAAAADAAMAAQAAAAQAAAADAAQAAQAAAAQAAAADAAYAAQAAAAIAAAADAAcAAQAAAAIAAAAPAAMAAQABAAMAAAAQAAMAAQAAAAMAAAARAAMAAQAAAAIAAAARAAQAAQABAAIAAAARAAUAAQAAAAQAAAASAAUAAQAAAAQAAAASAAYAAQAAAAIAAAASAAcAAQABAAMAAAASAAgAAQABAAQAAAARAAgAAQAAAAIAAAARAAkAAQABAAIAAAARAAoAAQABAAMAAAD//wIAAQAAAAMAAAD//wMAAQABAAIAAAD//wQAAQABAAIAAAD//wUAAQAAAAQAAAD//wYAAQAAAAMAAAD//wcAAQAAAAMAAAAAAAcAAQAAAAIAAAAAAAgAAQAAAAIAAAAAAAkAAQABAAMAAAAAAAoAAQAAAAQAAAABAAoAAQABAAQAAAABAAsAAQAAAAMAAAACAAsAAQAAAAMAAAADAAsAAQAAAAMAAAAEAAsAAQAAAAQAAAAFAAsAAQABAAQAAAAGAAsAAQAAAAIAAAAHAAsAAQAAAAMAAAAIAAsAAQAAAAQAAAAJAAsAAQAAAAMAAAAKAAsAAQABAAQAAAAKAAoAAQABAAQAAAALAAoAAQABAAIAAAAMAAoAAQAAAAMAAAANAAoAAQABAAIAAAAOAAoAAQAAAAMAAAAPAAoAAQAAAAIAAAAPAAsAAQAAAAMAAAAQAAsAAQABAAQAAAAQAAoAAQABAAQAAAADAAoAAQABAAMAAAADAAkAAQABAAIAAAADAAgAAQAAAAIAAAACAAgAAQABAAQAAAACAAcAAQABAAQAAAACAAYAAQAAAAMAAAACAAUAAQAAAAQAAAACAAQAAQABAAIAAAABAAQAAQAAAAMAAAABAAMAAQAAAAQAAAAAAAMAAQAAAAMAAAAAAAQAAQAAAAIAAAAAAAUAAQABAAQAAAAAAAYAAQAAAAIAAAABAAYAAQABAAQAAAABAAUAAQAAAAMAAAABAAcAAQABAAMAAAABAAgAAQABAAMAAAABAAkAAQAAAAMAAAACAAkAAQAAAAQAAAACAAoAAQAAAAMAAAADAAUAAQABAAIAAAAEAAoAAQAAAAMAAAAHAAoAAQAAAAIAAAAIAAoAAQABAAMAAAAJAAoAAQABAAQAAAAKAAkAAQABAAIAAAANAAYAAQABAAQAAAAPAAQAAQABAAIAAAAPAAUAAQAAAAMAAAAPAAYAAQAAAAMAAAAOAAYAAQABAAMAAAAOAAcAAQABAAMAAAANAAcAAQAAAAQAAAANAAgAAQABAAIAAAAMAAgAAQAAAAQAAAAMAAkAAQABAAMAAAALAAkAAQAAAAIAAAANAAkAAQAAAAIAAAAOAAkAAQABAAIAAAAOAAgAAQAAAAMAAAAPAAgAAQAAAAQAAAAPAAcAAQABAAQAAAAQAAcAAQAAAAQAAAAQAAYAAQAAAAQAAAAQAAUAAQAAAAMAAAAQAAQAAQAAAAMAAAARAAYAAQABAAIAAAARAAcAAQAAAAIAAAAQAAgAAQABAAIAAAAQAAkAAQAAAAMAAAAPAAkAAQABAAIAAAAJAAkAAQABAAMAAAAKAAgAAQAAAAMAAAAQAAIAAQAMAAIAAAAOAAUAAQAAAAMAAAAEAAYAAQAAAAMAAAAEAAcAAQAAAAMAAAAEAAgAAQAAAAMAAAAEAAkAAQAAAAMAAAAEAAUAAQAAAAMAAAAEAAQAAQAAAAMAAAAFAAUAAQAAAAMAAAAFAAYAAQAAAAMAAAAFAAcAAQAAAAMAAAAFAAgAAQAAAAMAAAA=")
+tile_set = SubResource("TileSet_crnkf")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["world_object"]]
+z_index = 2
+texture_filter = 1
+position = Vector2(75.1968, 31.7142)
+collision_layer = 3
+platform_on_leave = 1
+script = ExtResource("2_j2jgw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+sprite_frames = SubResource("SpriteFrames_nt81g")
+animation = &"jump"
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(0, 0.68071)
+shape = SubResource("RectangleShape2D_11sib")
+
+[node name="Area2D" type="Area2D" parent="CharacterBody2D"]
+position = Vector2(0, 12)
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Area2D"]
+shape = SubResource("RectangleShape2D_abjw2")
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="CharacterBody2D"]
+remote_path = NodePath("../../Camera2D")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(75.1968, 31.7142)
+zoom = Vector2(2, 2)
+limit_left = 0
+limit_top = 0
+limit_smoothed = true
+position_smoothing_enabled = true
+rotation_smoothing_enabled = true
+
+[node name="gutter" type="Node2D" parent="."]
+
+[node name="gutter" type="Sprite2D" parent="gutter"]
+position = Vector2(431, 201.5)
+rotation = 0.328574
+scale = Vector2(3.28571, 1)
+texture = SubResource("AtlasTexture_vjvvp")
+
+[node name="poin" type="Sprite2D" parent="gutter"]
+position = Vector2(323.923, 161.41)
+rotation = 0.328574
+scale = Vector2(0.423943, 0.423943)
+texture = SubResource("AtlasTexture_x2srw")
+
+[node name="poin2" type="StaticBody2D" parent="gutter"]
+position = Vector2(537.83, 236.807)
+
+[node name="poin" type="Sprite2D" parent="gutter/poin2"]
+rotation = 0.328574
+scale = Vector2(0.423943, 0.423943)
+texture = SubResource("AtlasTexture_x2srw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="gutter/poin2"]
+shape = SubResource("CircleShape2D_dd63f")
+
+[node name="platform" type="RigidBody2D" parent="gutter" groups=["groove"]]
+position = Vector2(326.035, 162.046)
+gravity_scale = 0.0
+lock_rotation = true
+freeze_mode = 1
+linear_damp = 16.323
+
+[node name="Sprite2D" type="Sprite2D" parent="gutter/platform"]
+texture = SubResource("AtlasTexture_say0j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="gutter/platform"]
+position = Vector2(-0.397461, 0.341492)
+shape = SubResource("RectangleShape2D_5ryqx")
+
+[node name="GrooveJoint2D" type="GrooveJoint2D" parent="gutter"]
+position = Vector2(325.048, 162.762)
+rotation = -1.2269
+node_a = NodePath("../poin2")
+node_b = NodePath("../platform")
+length = 225.0
+initial_offset = 1.0
+
+[node name="dangle" type="Node2D" parent="."]
+
+[node name="RigidBody2D" type="RigidBody2D" parent="dangle" groups=["Rigidbody", "world_object"]]
+position = Vector2(1.04744, 56.7894)
+collision_layer = 2
+collision_mask = 2
+mass = 0.2
+
+[node name="Sprite2D" type="Sprite2D" parent="dangle/RigidBody2D"]
+texture = SubResource("AtlasTexture_1sxit")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dangle/RigidBody2D"]
+position = Vector2(0.0184326, 0.0124512)
+shape = SubResource("RectangleShape2D_wuj53")
+
+[node name="poin2" type="StaticBody2D" parent="dangle"]
+position = Vector2(0.280884, 0.845428)
+collision_layer = 32
+collision_mask = 32
+
+[node name="poin" type="Sprite2D" parent="dangle/poin2"]
+rotation = 0.328574
+scale = Vector2(0.423943, 0.423943)
+texture = SubResource("AtlasTexture_x2srw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dangle/poin2"]
+shape = SubResource("CircleShape2D_dd63f")
+
+[node name="DampedSpringJoint2D" type="DampedSpringJoint2D" parent="dangle"]
+position = Vector2(0, 1.33483)
+node_a = NodePath("../poin2")
+node_b = NodePath("../RigidBody2D")
+
+[node name="dangle2" type="Node2D" parent="."]
+position = Vector2(129.093, 20.868)
+
+[node name="RigidBody2D" type="RigidBody2D" parent="dangle2" groups=["Rigidbody", "world_object"]]
+position = Vector2(1.04744, 56.7894)
+collision_layer = 2
+collision_mask = 2
+mass = 0.694
+
+[node name="Sprite2D" type="Sprite2D" parent="dangle2/RigidBody2D"]
+texture = SubResource("AtlasTexture_1sxit")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dangle2/RigidBody2D"]
+position = Vector2(0.0184326, 0.0124512)
+shape = SubResource("RectangleShape2D_wuj53")
+
+[node name="poin2" type="StaticBody2D" parent="dangle2"]
+position = Vector2(0.280884, 0.845428)
+collision_layer = 32
+collision_mask = 32
+
+[node name="poin" type="Sprite2D" parent="dangle2/poin2"]
+rotation = 0.328574
+scale = Vector2(0.423943, 0.423943)
+texture = SubResource("AtlasTexture_x2srw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dangle2/poin2"]
+shape = SubResource("CircleShape2D_dd63f")
+
+[node name="DampedSpringJoint2D" type="DampedSpringJoint2D" parent="dangle2"]
+position = Vector2(0, 1.33483)
+node_a = NodePath("../poin2")
+node_b = NodePath("../RigidBody2D")
+
+[node name="dangle3" type="Node2D" parent="."]
+position = Vector2(333.323, 12.859)
+
+[node name="RigidBody2D" type="RigidBody2D" parent="dangle3" groups=["Rigidbody", "world_object"]]
+position = Vector2(1.04744, 56.7894)
+collision_layer = 2
+collision_mask = 2
+mass = 0.694
+
+[node name="Sprite2D" type="Sprite2D" parent="dangle3/RigidBody2D"]
+texture = SubResource("AtlasTexture_1sxit")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dangle3/RigidBody2D"]
+position = Vector2(0.0184326, 0.0124512)
+shape = SubResource("RectangleShape2D_wuj53")
+
+[node name="poin2" type="StaticBody2D" parent="dangle3"]
+position = Vector2(0.280884, 0.845428)
+collision_layer = 32
+collision_mask = 32
+
+[node name="poin" type="Sprite2D" parent="dangle3/poin2"]
+rotation = 0.328574
+scale = Vector2(0.423943, 0.423943)
+texture = SubResource("AtlasTexture_x2srw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dangle3/poin2"]
+shape = SubResource("CircleShape2D_dd63f")
+
+[node name="DampedSpringJoint2D" type="DampedSpringJoint2D" parent="dangle3"]
+position = Vector2(0, 1.33483)
+node_a = NodePath("../poin2")
+node_b = NodePath("../RigidBody2D")
+bias = 0.559
+length = 60.0
+damping = 11.7
+
+[node name="dangle4" type="Node2D" parent="."]
+position = Vector2(404.183, 56.907)
+
+[node name="RigidBody2D" type="RigidBody2D" parent="dangle4" groups=["Rigidbody", "world_object"]]
+position = Vector2(1.04744, 56.7894)
+collision_layer = 2
+collision_mask = 2
+mass = 0.694
+
+[node name="Sprite2D" type="Sprite2D" parent="dangle4/RigidBody2D"]
+texture = SubResource("AtlasTexture_1sxit")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dangle4/RigidBody2D"]
+position = Vector2(0.0184326, 0.0124512)
+shape = SubResource("RectangleShape2D_wuj53")
+
+[node name="poin2" type="StaticBody2D" parent="dangle4"]
+position = Vector2(0.280884, 0.845428)
+collision_layer = 32
+collision_mask = 32
+
+[node name="poin" type="Sprite2D" parent="dangle4/poin2"]
+rotation = 0.328574
+scale = Vector2(0.423943, 0.423943)
+texture = SubResource("AtlasTexture_x2srw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dangle4/poin2"]
+shape = SubResource("CircleShape2D_dd63f")
+
+[node name="DampedSpringJoint2D" type="DampedSpringJoint2D" parent="dangle4"]
+position = Vector2(0, 1.33483)
+node_a = NodePath("../poin2")
+node_b = NodePath("../RigidBody2D")
+bias = 0.559
+length = 60.0
+damping = 11.7
+
+[node name="dangle6" type="Node2D" parent="."]
+position = Vector2(646.047, 30.9901)
+
+[node name="RigidBody2D" type="RigidBody2D" parent="dangle6" groups=["Rigidbody", "world_object"]]
+position = Vector2(1.04744, 56.7894)
+collision_layer = 2
+collision_mask = 2
+mass = 0.694
+
+[node name="Sprite2D" type="Sprite2D" parent="dangle6/RigidBody2D"]
+texture = SubResource("AtlasTexture_1sxit")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dangle6/RigidBody2D"]
+position = Vector2(0.0184326, 0.0124512)
+shape = SubResource("RectangleShape2D_wuj53")
+
+[node name="poin2" type="StaticBody2D" parent="dangle6"]
+position = Vector2(0.280884, 0.845428)
+collision_layer = 32
+collision_mask = 32
+
+[node name="poin" type="Sprite2D" parent="dangle6/poin2"]
+rotation = 0.328574
+scale = Vector2(0.423943, 0.423943)
+texture = SubResource("AtlasTexture_x2srw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dangle6/poin2"]
+shape = SubResource("CircleShape2D_dd63f")
+
+[node name="DampedSpringJoint2D" type="DampedSpringJoint2D" parent="dangle6"]
+position = Vector2(0, 1.33483)
+node_a = NodePath("../poin2")
+node_b = NodePath("../RigidBody2D")
+bias = 0.559
+length = 60.0
+damping = 11.7
+
+[node name="dangle7" type="Node2D" parent="."]
+position = Vector2(519.055, 26.2279)
+
+[node name="RigidBody2D" type="RigidBody2D" parent="dangle7" groups=["Rigidbody", "world_object"]]
+position = Vector2(1.04744, 56.7894)
+collision_layer = 2
+collision_mask = 2
+mass = 0.694
+
+[node name="Sprite2D" type="Sprite2D" parent="dangle7/RigidBody2D"]
+texture = SubResource("AtlasTexture_1sxit")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dangle7/RigidBody2D"]
+position = Vector2(0.0184326, 0.0124512)
+shape = SubResource("RectangleShape2D_wuj53")
+
+[node name="poin2" type="StaticBody2D" parent="dangle7"]
+position = Vector2(0.280884, 0.845428)
+collision_layer = 32
+collision_mask = 32
+
+[node name="poin" type="Sprite2D" parent="dangle7/poin2"]
+rotation = 0.328574
+scale = Vector2(0.423943, 0.423943)
+texture = SubResource("AtlasTexture_x2srw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dangle7/poin2"]
+shape = SubResource("CircleShape2D_dd63f")
+
+[node name="DampedSpringJoint2D" type="DampedSpringJoint2D" parent="dangle7"]
+position = Vector2(0, 1.33483)
+node_a = NodePath("../poin2")
+node_b = NodePath("../RigidBody2D")
+bias = 0.559
+length = 60.0
+damping = 11.7
+
+[node name="dangle8" type="Node2D" parent="."]
+position = Vector2(769, 26)
+
+[node name="RigidBody2D" type="RigidBody2D" parent="dangle8" groups=["Rigidbody", "world_object"]]
+position = Vector2(1.04744, 56.7894)
+collision_layer = 2
+collision_mask = 2
+mass = 0.694
+
+[node name="Sprite2D" type="Sprite2D" parent="dangle8/RigidBody2D"]
+texture = SubResource("AtlasTexture_1sxit")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dangle8/RigidBody2D"]
+position = Vector2(0.0184326, 0.0124512)
+shape = SubResource("RectangleShape2D_wuj53")
+
+[node name="poin2" type="StaticBody2D" parent="dangle8"]
+position = Vector2(0.280884, 0.845428)
+collision_layer = 32
+collision_mask = 32
+
+[node name="poin" type="Sprite2D" parent="dangle8/poin2"]
+rotation = 0.328574
+scale = Vector2(0.423943, 0.423943)
+texture = SubResource("AtlasTexture_x2srw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dangle8/poin2"]
+shape = SubResource("CircleShape2D_dd63f")
+
+[node name="DampedSpringJoint2D" type="DampedSpringJoint2D" parent="dangle8"]
+position = Vector2(0, 1.33483)
+node_a = NodePath("../poin2")
+node_b = NodePath("../RigidBody2D")
+bias = 0.559
+length = 60.0
+damping = 11.7
+
+[node name="dangle9" type="Node2D" parent="."]
+position = Vector2(423.819, 676.439)
+
+[node name="RigidBody2D" type="RigidBody2D" parent="dangle9" groups=["Rigidbody", "world_object"]]
+position = Vector2(1.04744, 56.7894)
+collision_layer = 2
+collision_mask = 2
+mass = 0.694
+
+[node name="Sprite2D" type="Sprite2D" parent="dangle9/RigidBody2D"]
+texture = SubResource("AtlasTexture_1sxit")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dangle9/RigidBody2D"]
+position = Vector2(0.0184326, 0.0124512)
+shape = SubResource("RectangleShape2D_wuj53")
+
+[node name="poin2" type="StaticBody2D" parent="dangle9"]
+position = Vector2(0.280884, 0.845428)
+collision_layer = 32
+collision_mask = 32
+
+[node name="poin" type="Sprite2D" parent="dangle9/poin2"]
+rotation = 0.328574
+scale = Vector2(0.423943, 0.423943)
+texture = SubResource("AtlasTexture_x2srw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dangle9/poin2"]
+shape = SubResource("CircleShape2D_dd63f")
+
+[node name="DampedSpringJoint2D" type="DampedSpringJoint2D" parent="dangle9"]
+position = Vector2(0, 1.33483)
+node_a = NodePath("../poin2")
+node_b = NodePath("../RigidBody2D")
+bias = 0.559
+length = 60.0
+damping = 11.7
+
+[node name="dangle10" type="Node2D" parent="."]
+position = Vector2(539.699, 417.692)
+
+[node name="RigidBody2D" type="RigidBody2D" parent="dangle10" groups=["Rigidbody", "world_object"]]
+position = Vector2(1.04744, 56.7894)
+collision_layer = 2
+collision_mask = 2
+mass = 0.694
+
+[node name="Sprite2D" type="Sprite2D" parent="dangle10/RigidBody2D"]
+texture = SubResource("AtlasTexture_1sxit")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dangle10/RigidBody2D"]
+position = Vector2(0.0184326, 0.0124512)
+shape = SubResource("RectangleShape2D_wuj53")
+
+[node name="poin2" type="StaticBody2D" parent="dangle10"]
+position = Vector2(0.280884, 0.845428)
+collision_layer = 32
+collision_mask = 32
+
+[node name="poin" type="Sprite2D" parent="dangle10/poin2"]
+rotation = 0.328574
+scale = Vector2(0.423943, 0.423943)
+texture = SubResource("AtlasTexture_x2srw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dangle10/poin2"]
+shape = SubResource("CircleShape2D_dd63f")
+
+[node name="DampedSpringJoint2D" type="DampedSpringJoint2D" parent="dangle10"]
+position = Vector2(0, 1.33483)
+node_a = NodePath("../poin2")
+node_b = NodePath("../RigidBody2D")
+bias = 0.559
+length = 60.0
+damping = 11.7
+
+[node name="dangle11" type="Node2D" parent="."]
+position = Vector2(533.349, 597.069)
+
+[node name="RigidBody2D" type="RigidBody2D" parent="dangle11" groups=["Rigidbody", "world_object"]]
+position = Vector2(1.04744, 56.7894)
+collision_layer = 2
+collision_mask = 2
+mass = 0.694
+
+[node name="Sprite2D" type="Sprite2D" parent="dangle11/RigidBody2D"]
+texture = SubResource("AtlasTexture_1sxit")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dangle11/RigidBody2D"]
+position = Vector2(0.0184326, 0.0124512)
+shape = SubResource("RectangleShape2D_wuj53")
+
+[node name="poin2" type="StaticBody2D" parent="dangle11"]
+position = Vector2(0.280884, 0.845428)
+collision_layer = 32
+collision_mask = 32
+
+[node name="poin" type="Sprite2D" parent="dangle11/poin2"]
+rotation = 0.328574
+scale = Vector2(0.423943, 0.423943)
+texture = SubResource("AtlasTexture_x2srw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dangle11/poin2"]
+shape = SubResource("CircleShape2D_dd63f")
+
+[node name="DampedSpringJoint2D" type="DampedSpringJoint2D" parent="dangle11"]
+position = Vector2(0, 1.33483)
+node_a = NodePath("../poin2")
+node_b = NodePath("../RigidBody2D")
+bias = 0.559
+length = 60.0
+damping = 11.7
+
+[node name="dangle12" type="Node2D" parent="."]
+position = Vector2(649.23, 276.414)
+
+[node name="RigidBody2D" type="RigidBody2D" parent="dangle12" groups=["Rigidbody", "world_object"]]
+position = Vector2(1.04744, 56.7894)
+collision_layer = 2
+collision_mask = 2
+mass = 0.694
+
+[node name="Sprite2D" type="Sprite2D" parent="dangle12/RigidBody2D"]
+texture = SubResource("AtlasTexture_1sxit")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dangle12/RigidBody2D"]
+position = Vector2(0.0184326, 0.0124512)
+shape = SubResource("RectangleShape2D_wuj53")
+
+[node name="poin2" type="StaticBody2D" parent="dangle12"]
+position = Vector2(0.280884, 0.845428)
+collision_layer = 32
+collision_mask = 32
+
+[node name="poin" type="Sprite2D" parent="dangle12/poin2"]
+rotation = 0.328574
+scale = Vector2(0.423943, 0.423943)
+texture = SubResource("AtlasTexture_x2srw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dangle12/poin2"]
+shape = SubResource("CircleShape2D_dd63f")
+
+[node name="DampedSpringJoint2D" type="DampedSpringJoint2D" parent="dangle12"]
+position = Vector2(0, 1.33483)
+node_a = NodePath("../poin2")
+node_b = NodePath("../RigidBody2D")
+bias = 0.559
+length = 60.0
+damping = 11.7
+
+[node name="dangle13" type="Node2D" parent="."]
+position = Vector2(831.781, 447.853)
+
+[node name="RigidBody2D" type="RigidBody2D" parent="dangle13" groups=["Rigidbody", "world_object"]]
+position = Vector2(1.04744, 56.7894)
+collision_layer = 2
+collision_mask = 2
+mass = 0.694
+
+[node name="Sprite2D" type="Sprite2D" parent="dangle13/RigidBody2D"]
+texture = SubResource("AtlasTexture_1sxit")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dangle13/RigidBody2D"]
+position = Vector2(0.0184326, 0.0124512)
+shape = SubResource("RectangleShape2D_wuj53")
+
+[node name="poin2" type="StaticBody2D" parent="dangle13"]
+position = Vector2(0.280884, 0.845428)
+collision_layer = 32
+collision_mask = 32
+
+[node name="poin" type="Sprite2D" parent="dangle13/poin2"]
+rotation = 0.328574
+scale = Vector2(0.423943, 0.423943)
+texture = SubResource("AtlasTexture_x2srw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dangle13/poin2"]
+shape = SubResource("CircleShape2D_dd63f")
+
+[node name="DampedSpringJoint2D" type="DampedSpringJoint2D" parent="dangle13"]
+position = Vector2(0, 1.33483)
+node_a = NodePath("../poin2")
+node_b = NodePath("../RigidBody2D")
+bias = 0.559
+length = 60.0
+damping = 11.7
+
+[node name="dangle5" type="Node2D" parent="."]
+position = Vector2(230.763, 23.7944)
+
+[node name="RigidBody2D" type="RigidBody2D" parent="dangle5" groups=["Rigidbody", "world_object"]]
+position = Vector2(1.04744, 56.7894)
+collision_layer = 2
+collision_mask = 2
+mass = 0.694
+
+[node name="Sprite2D" type="Sprite2D" parent="dangle5/RigidBody2D"]
+texture = SubResource("AtlasTexture_1sxit")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dangle5/RigidBody2D"]
+position = Vector2(0.0184326, 0.0124512)
+shape = SubResource("RectangleShape2D_wuj53")
+
+[node name="poin2" type="StaticBody2D" parent="dangle5"]
+position = Vector2(0.280884, 0.845428)
+collision_layer = 32
+collision_mask = 32
+
+[node name="poin" type="Sprite2D" parent="dangle5/poin2"]
+rotation = 0.328574
+scale = Vector2(0.423943, 0.423943)
+texture = SubResource("AtlasTexture_x2srw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dangle5/poin2"]
+shape = SubResource("CircleShape2D_dd63f")
+
+[node name="DampedSpringJoint2D" type="DampedSpringJoint2D" parent="dangle5"]
+position = Vector2(0, 1.33483)
+node_a = NodePath("../poin2")
+node_b = NodePath("../RigidBody2D")
+bias = 0.559
+length = 90.0
+damping = 11.7
+
+[node name="joint" type="Node2D" parent="."]
+position = Vector2(712.568, 211.405)
+
+[node name="poin2" type="StaticBody2D" parent="joint"]
+collision_layer = 32
+collision_mask = 32
+
+[node name="poin" type="Sprite2D" parent="joint/poin2"]
+rotation = 0.328574
+scale = Vector2(0.423943, 0.423943)
+texture = SubResource("AtlasTexture_x2srw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="joint/poin2"]
+shape = SubResource("CircleShape2D_dd63f")
+
+[node name="platform" type="RigidBody2D" parent="joint"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="joint/platform"]
+scale = Vector2(0.486294, 1)
+texture = SubResource("AtlasTexture_say0j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="joint/platform"]
+position = Vector2(-0.397461, 0.341492)
+shape = SubResource("RectangleShape2D_n0tgf")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="joint"]
+node_a = NodePath("../poin2")
+node_b = NodePath("../platform")
+motor_enabled = true
+motor_target_velocity = 0.872665
+
+[node name="joint7" type="Node2D" parent="."]
+position = Vector2(796.898, 394.082)
+
+[node name="poin2" type="StaticBody2D" parent="joint7"]
+collision_layer = 32
+collision_mask = 32
+
+[node name="poin" type="Sprite2D" parent="joint7/poin2"]
+rotation = 0.328574
+scale = Vector2(0.423943, 0.423943)
+texture = SubResource("AtlasTexture_x2srw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="joint7/poin2"]
+shape = SubResource("CircleShape2D_dd63f")
+
+[node name="platform" type="RigidBody2D" parent="joint7"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="joint7/platform"]
+scale = Vector2(0.486294, 1)
+texture = SubResource("AtlasTexture_say0j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="joint7/platform"]
+position = Vector2(-0.397461, 0.341492)
+shape = SubResource("RectangleShape2D_n0tgf")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="joint7"]
+node_a = NodePath("../poin2")
+node_b = NodePath("../platform")
+motor_enabled = true
+motor_target_velocity = 0.872665
+
+[node name="joint2" type="Node2D" parent="."]
+position = Vector2(974.742, 239.391)
+
+[node name="poin2" type="StaticBody2D" parent="joint2"]
+collision_layer = 32
+collision_mask = 32
+
+[node name="poin" type="Sprite2D" parent="joint2/poin2"]
+rotation = 0.328574
+scale = Vector2(0.423943, 0.423943)
+texture = SubResource("AtlasTexture_x2srw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="joint2/poin2"]
+shape = SubResource("CircleShape2D_dd63f")
+
+[node name="platform" type="RigidBody2D" parent="joint2"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="joint2/platform"]
+scale = Vector2(0.486294, 1)
+texture = SubResource("AtlasTexture_say0j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="joint2/platform"]
+position = Vector2(-0.397461, 0.341492)
+shape = SubResource("RectangleShape2D_n0tgf")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="joint2"]
+node_a = NodePath("../poin2")
+node_b = NodePath("../platform")
+motor_enabled = true
+motor_target_velocity = 0.872665
+
+[node name="joint3" type="Node2D" parent="."]
+position = Vector2(893.089, 149.137)
+
+[node name="poin2" type="StaticBody2D" parent="joint3"]
+collision_layer = 32
+collision_mask = 32
+
+[node name="poin" type="Sprite2D" parent="joint3/poin2"]
+rotation = 0.328574
+scale = Vector2(0.423943, 0.423943)
+texture = SubResource("AtlasTexture_x2srw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="joint3/poin2"]
+shape = SubResource("CircleShape2D_dd63f")
+
+[node name="platform" type="RigidBody2D" parent="joint3"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="joint3/platform"]
+scale = Vector2(0.486294, 1)
+texture = SubResource("AtlasTexture_say0j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="joint3/platform"]
+position = Vector2(-0.397461, 0.341492)
+shape = SubResource("RectangleShape2D_n0tgf")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="joint3"]
+node_a = NodePath("../poin2")
+node_b = NodePath("../platform")
+motor_enabled = true
+motor_target_velocity = -0.872665
+
+[node name="joint4" type="Node2D" parent="."]
+position = Vector2(857.316, 295.754)
+
+[node name="poin2" type="StaticBody2D" parent="joint4"]
+collision_layer = 32
+collision_mask = 32
+
+[node name="poin" type="Sprite2D" parent="joint4/poin2"]
+rotation = 0.328574
+scale = Vector2(0.423943, 0.423943)
+texture = SubResource("AtlasTexture_x2srw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="joint4/poin2"]
+shape = SubResource("CircleShape2D_dd63f")
+
+[node name="platform" type="RigidBody2D" parent="joint4"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="joint4/platform"]
+scale = Vector2(0.486294, 1)
+texture = SubResource("AtlasTexture_say0j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="joint4/platform"]
+position = Vector2(-0.397461, 0.341492)
+shape = SubResource("RectangleShape2D_n0tgf")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="joint4"]
+node_a = NodePath("../poin2")
+node_b = NodePath("../platform")
+motor_enabled = true
+motor_target_velocity = 0.872665
+
+[node name="joint5" type="Node2D" parent="."]
+position = Vector2(674.24, 472.591)
+
+[node name="poin2" type="StaticBody2D" parent="joint5"]
+collision_layer = 32
+collision_mask = 32
+
+[node name="poin" type="Sprite2D" parent="joint5/poin2"]
+rotation = 0.328574
+scale = Vector2(0.423943, 0.423943)
+texture = SubResource("AtlasTexture_x2srw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="joint5/poin2"]
+shape = SubResource("CircleShape2D_dd63f")
+
+[node name="platform" type="RigidBody2D" parent="joint5"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="joint5/platform"]
+scale = Vector2(0.486294, 1)
+texture = SubResource("AtlasTexture_say0j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="joint5/platform"]
+position = Vector2(-0.397461, 0.341492)
+shape = SubResource("RectangleShape2D_n0tgf")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="joint5"]
+node_a = NodePath("../poin2")
+node_b = NodePath("../platform")
+motor_enabled = true
+motor_target_velocity = 0.698132
+
+[node name="joint6" type="Node2D" parent="."]
+position = Vector2(494.902, 353.053)
+
+[node name="poin2" type="StaticBody2D" parent="joint6"]
+collision_layer = 32
+collision_mask = 32
+
+[node name="poin" type="Sprite2D" parent="joint6/poin2"]
+rotation = 0.328574
+scale = Vector2(0.423943, 0.423943)
+texture = SubResource("AtlasTexture_x2srw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="joint6/poin2"]
+shape = SubResource("CircleShape2D_dd63f")
+
+[node name="platform" type="RigidBody2D" parent="joint6"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="joint6/platform"]
+scale = Vector2(0.486294, 1)
+texture = SubResource("AtlasTexture_say0j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="joint6/platform"]
+position = Vector2(-0.397461, 0.341492)
+shape = SubResource("RectangleShape2D_n0tgf")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="joint6"]
+node_a = NodePath("../poin2")
+node_b = NodePath("../platform")
+motor_enabled = true
+motor_target_velocity = -0.872665
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(1100.68, 102.986)
+input_pickable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(66.2856, 43.3781)
+shape = SubResource("RectangleShape2D_rvdmc")
+
+[connection signal="body_entered" from="CharacterBody2D/Area2D" to="CharacterBody2D" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="CharacterBody2D/Area2D" to="CharacterBody2D" method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="Area2D" to="CharacterBody2D" method="_on_finish_entered"]
