@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://kcs16cymbg18"]
+
+[ext_resource type="Script" path="res://assets/card_manager.gd" id="1_dar6g"]
+[ext_resource type="PackedScene" uid="uid://c4uy6xl30s4yl" path="res://assets/card2d.tscn" id="2_pdg0h"]
+
+[node name="Main" type="Node2D"]
+
+[node name="card_manager" type="Node2D" parent="."]
+script = ExtResource("1_dar6g")
+card_scaling = Vector2(0.2, 0.2)
+
+[node name="card" parent="card_manager" instance=ExtResource("2_pdg0h")]
+position = Vector2(94, 56)
+
+[node name="card2" parent="card_manager" instance=ExtResource("2_pdg0h")]
+position = Vector2(157, 61)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(194, 107)
+zoom = Vector2(3, 3)
