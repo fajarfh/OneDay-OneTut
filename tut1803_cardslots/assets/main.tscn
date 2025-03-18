@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://kcs16cymbg18"]
+
+[ext_resource type="Script" path="res://assets/card_manager.gd" id="1_dar6g"]
+[ext_resource type="PackedScene" uid="uid://c4uy6xl30s4yl" path="res://assets/card2d.tscn" id="2_pdg0h"]
+[ext_resource type="PackedScene" uid="uid://v4hy4jei3krr" path="res://assets/card_slot.tscn" id="3_rwnsh"]
+
+[node name="Main" type="Node2D"]
+
+[node name="card_manager" type="Node2D" parent="."]
+script = ExtResource("1_dar6g")
+
+[node name="card" parent="card_manager" instance=ExtResource("2_pdg0h")]
+position = Vector2(94, 56)
+
+[node name="card2" parent="card_manager" instance=ExtResource("2_pdg0h")]
+position = Vector2(157, 61)
+
+[node name="card_slot" parent="." instance=ExtResource("3_rwnsh")]
+
+[node name="card_slot2" parent="." instance=ExtResource("3_rwnsh")]
+position = Vector2(136, 144.646)
+
+[node name="card_slot3" parent="." instance=ExtResource("3_rwnsh")]
+position = Vector2(188, 144.646)
+
+[node name="card_slot4" parent="." instance=ExtResource("3_rwnsh")]
+position = Vector2(238, 144.646)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(194, 107)
+zoom = Vector2(3, 3)
