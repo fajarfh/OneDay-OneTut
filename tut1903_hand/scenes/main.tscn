@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://kcs16cymbg18"]
+
+[ext_resource type="Script" path="res://scripts/card_manager.gd" id="1_dar6g"]
+[ext_resource type="Script" path="res://scenes/slot_container.gd" id="2_3if72"]
+[ext_resource type="Script" path="res://scripts/player_hand.gd" id="3_lbl0v"]
+[ext_resource type="PackedScene" uid="uid://v4hy4jei3krr" path="res://scenes/card_slot.tscn" id="3_rwnsh"]
+[ext_resource type="PackedScene" uid="uid://c4uy6xl30s4yl" path="res://scenes/card2d.tscn" id="4_jw7fl"]
+
+[node name="Main" type="Node2D"]
+
+[node name="card_manager" type="Node2D" parent="."]
+script = ExtResource("1_dar6g")
+
+[node name="slot_container" type="Node2D" parent="."]
+script = ExtResource("2_3if72")
+slot_scene_res = ExtResource("3_rwnsh")
+slot_position = 50
+
+[node name="player_hand" type="Node2D" parent="."]
+script = ExtResource("3_lbl0v")
+card_scene_res = ExtResource("4_jw7fl")
+card_width = 42
+hand_y_position = 150
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(192, 108)
+zoom = Vector2(3, 3)
