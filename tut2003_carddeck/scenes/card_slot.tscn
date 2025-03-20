@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://v4hy4jei3krr"]
+
+[ext_resource type="Texture2D" uid="uid://crcde6k07uwmv" path="res://assets/cardsLarge_tilemap_packed.png" id="1_1yiug"]
+[ext_resource type="Script" path="res://scripts/card_slot.gd" id="1_xnopv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qtqgi"]
+atlas = ExtResource("1_1yiug")
+region = Rect2(843, 2, 42, 60)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s6ntf"]
+size = Vector2(124.586, 177.708)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gvibf"]
+size = Vector2(42.5856, 59.7076)
+
+[node name="card_slot" type="Node2D"]
+script = ExtResource("1_xnopv")
+
+[node name="card_slot_image" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_qtqgi")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-0.292816, -0.146194)
+shape = SubResource("RectangleShape2D_s6ntf")
+
+[node name="area_alter" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="area_alter"]
+position = Vector2(-0.292816, -0.146194)
+shape = SubResource("RectangleShape2D_gvibf")
