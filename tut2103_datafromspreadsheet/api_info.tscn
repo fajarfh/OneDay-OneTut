@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://cpwiy61rs40md"]
+
+[ext_resource type="Script" path="res://api_info.gd" id="1_lca8i"]
+[ext_resource type="PackedScene" uid="uid://dfvnrsjdig4c7" path="res://json_button.tscn" id="2_clg8t"]
+
+[node name="JSON_INFO" type="Node2D"]
+script = ExtResource("1_lca8i")
+button = ExtResource("2_clg8t")
+json_path = "res://test.json"
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 328.0
+offset_top = 14.0
+offset_right = 1136.0
+offset_bottom = 630.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+offset_left = 3.0
+offset_top = 2.0
+offset_right = 204.0
+offset_bottom = 644.0
+
+[node name="button_container" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[connection signal="request_completed" from="HTTPRequest" to="." method="_on_request_completed"]
