@@ -1,0 +1,152 @@
+[gd_scene load_steps=15 format=3 uid="uid://cvs4w8dwhub5a"]
+
+[ext_resource type="Script" path="res://assets/moving_plat.gd" id="1_e1024"]
+[ext_resource type="Texture2D" uid="uid://c25yl08xe47kh" path="res://assets/platformerPack_industrial_tilesheet.png" id="2_l0xyk"]
+
+[sub_resource type="Curve2D" id="Curve2D_10das"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_00nnf"]
+atlas = ExtResource("2_l0xyk")
+region = Rect2(420, 140, 210, 22)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1k65y"]
+size = Vector2(210, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4x5it"]
+atlas = ExtResource("2_l0xyk")
+region = Rect2(930, 155, 30, 55)
+
+[sub_resource type="Gradient" id="Gradient_w0gn0"]
+offsets = PackedFloat32Array(0, 0.636364)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_if0c7"]
+gradient = SubResource("Gradient_w0gn0")
+width = 150
+height = 110
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="Animation" id="Animation_w0jqd"]
+resource_name = "blip"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PointLight2D:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.466667, 1),
+"transitions": PackedFloat32Array(0.25, 2.2974, 1),
+"update": 0,
+"values": [1.15, 0.73, 1.15]
+}
+
+[sub_resource type="Animation" id="Animation_r5cn1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PointLight2D:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.15]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_p6sqj"]
+_data = {
+"RESET": SubResource("Animation_r5cn1"),
+"blip": SubResource("Animation_w0jqd")
+}
+
+[sub_resource type="Animation" id="Animation_77amf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathFollow2D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_d6h5i"]
+resource_name = "move"
+length = 2.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathFollow2D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(-1.56, -1.56),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_f3icu"]
+_data = {
+"RESET": SubResource("Animation_77amf"),
+"move": SubResource("Animation_d6h5i")
+}
+
+[node name="Node2D" type="Path2D"]
+curve = SubResource("Curve2D_10das")
+script = ExtResource("1_e1024")
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
+collision_layer = 3
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D"]
+texture_filter = 1
+texture = SubResource("AtlasTexture_00nnf")
+region_rect = Rect2(123, 0, 0, 7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
+shape = SubResource("RectangleShape2D_1k65y")
+
+[node name="lamp4" type="Node2D" parent="AnimatableBody2D"]
+position = Vector2(0, -20)
+scale = Vector2(0.519997, 0.519997)
+
+[node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D/lamp4"]
+texture_filter = 1
+position = Vector2(0, -8.34282)
+texture = SubResource("AtlasTexture_4x5it")
+
+[node name="PointLight2D" type="PointLight2D" parent="AnimatableBody2D/lamp4"]
+position = Vector2(0, -35.791)
+color = Color(1, 0.8, 0, 1)
+energy = 1.15
+texture = SubResource("GradientTexture2D_if0c7")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatableBody2D/lamp4"]
+libraries = {
+"": SubResource("AnimationLibrary_p6sqj")
+}
+autoplay = "blip"
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+progress = 287.434
+rotates = false
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="PathFollow2D"]
+remote_path = NodePath("../../AnimatableBody2D")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_f3icu")
+}
