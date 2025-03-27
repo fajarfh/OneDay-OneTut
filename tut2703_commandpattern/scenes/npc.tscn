@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://dpj0y1lcll4ta"]
+
+[ext_resource type="Script" path="res://scripts/npc.gd" id="1_tqr58"]
+[ext_resource type="SpriteFrames" uid="uid://dwqci8lxvufj8" path="res://assets/npc_frames.tres" id="2_d0i63"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_11sib"]
+size = Vector2(20, 23.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_abjw2"]
+size = Vector2(15.2449, 8.60785)
+
+[node name="NPC" type="CharacterBody2D" groups=["world_object"]]
+texture_filter = 1
+position = Vector2(520.931, 388.684)
+collision_layer = 3
+platform_on_leave = 1
+script = ExtResource("1_tqr58")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("2_d0i63")
+animation = &"jump"
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.68071)
+shape = SubResource("RectangleShape2D_11sib")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0, 12)
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_abjw2")
+
+[node name="ControllerContainer" type="Node" parent="."]
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

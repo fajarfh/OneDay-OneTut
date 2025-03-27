@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://vssxovjbxm7b"]
+
+[ext_resource type="Texture2D" uid="uid://c25yl08xe47kh" path="res://assets/platformerPack_industrial_tilesheet.png" id="1_eba5o"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1sxit"]
+atlas = ExtResource("1_eba5o")
+region = Rect2(420, 440, 70, 50)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j7wnf"]
+size = Vector2(70.673, 50.0273)
+
+[node name="RigidBody2D" type="RigidBody2D" groups=["Rigidbody", "world_object"]]
+position = Vector2(147.634, 376.822)
+collision_layer = 2
+collision_mask = 2
+mass = 0.2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_1sxit")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.0184326, 0.0124512)
+shape = SubResource("RectangleShape2D_j7wnf")
