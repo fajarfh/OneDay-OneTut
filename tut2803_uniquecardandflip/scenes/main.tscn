@@ -1,0 +1,70 @@
+[gd_scene load_steps=11 format=3 uid="uid://kcs16cymbg18"]
+
+[ext_resource type="Script" path="res://scripts/card_manager.gd" id="1_dar6g"]
+[ext_resource type="Script" path="res://scripts/slot_container.gd" id="2_3if72"]
+[ext_resource type="Script" path="res://scripts/player_hand.gd" id="3_lbl0v"]
+[ext_resource type="PackedScene" uid="uid://v4hy4jei3krr" path="res://scenes/card_slot.tscn" id="3_rwnsh"]
+[ext_resource type="PackedScene" uid="uid://c4uy6xl30s4yl" path="res://scenes/card2d.tscn" id="4_jw7fl"]
+[ext_resource type="Texture2D" uid="uid://crcde6k07uwmv" path="res://assets/cardsLarge_tilemap_packed.png" id="6_eapoi"]
+[ext_resource type="Script" path="res://scripts/deck.gd" id="6_vajf1"]
+[ext_resource type="Script" path="res://scripts/input_manager.gd" id="8_tetlc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_id28t"]
+atlas = ExtResource("6_eapoi")
+region = Rect2(843, 66, 42, 60)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ggtd4"]
+size = Vector2(124, 178)
+
+[node name="Main" type="Node2D"]
+
+[node name="card_manager" type="Node2D" parent="."]
+script = ExtResource("1_dar6g")
+
+[node name="slot_container" type="Node2D" parent="."]
+script = ExtResource("2_3if72")
+slot_scene_res = ExtResource("3_rwnsh")
+slot_width = 200
+slot_position = 400
+
+[node name="player_hand" type="Node2D" parent="."]
+script = ExtResource("3_lbl0v")
+card_width = 136
+hand_y_position = 700
+
+[node name="deck" type="Node2D" parent="."]
+position = Vector2(150, 700)
+script = ExtResource("6_vajf1")
+card_scene_res = ExtResource("4_jw7fl")
+draw_speed = 0.5
+
+[node name="Sprite2D" type="Sprite2D" parent="deck"]
+z_index = -2
+texture_filter = 1
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_id28t")
+
+[node name="Area2D" type="Area2D" parent="deck"]
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="deck/Area2D"]
+shape = SubResource("RectangleShape2D_ggtd4")
+
+[node name="RichTextLabel" type="Label" parent="deck"]
+z_index = -1
+custom_minimum_size = Vector2(42, 60)
+offset_left = -62.0
+offset_top = -100.0
+offset_right = -20.0
+offset_bottom = -33.0
+scale = Vector2(3, 3)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 48
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="input_manager" type="Node2D" parent="."]
+script = ExtResource("8_tetlc")
