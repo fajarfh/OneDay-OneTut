@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://dlvnumfo8k2e4"]
+
+[ext_resource type="Texture2D" uid="uid://doblrynjy8te0" path="res://assets/tilesheet_transparent.png" id="1_p0ff5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4pdkp"]
+atlas = ExtResource("1_p0ff5")
+region = Rect2(289, 290, 16, 14)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_aagqb"]
+blend_mode = 1
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_j282f"]
+polygon = PackedVector2Array(-8, -6, -8, 5, -7, 5, -7, 6, -6, 6, -6, 7, 6, 7, 6, 6, 7, 6, 7, 5, 8, 5, 8, -6, 7, -6, 7, -7, 4, -7, 4, -6, -4, -6, -4, -7, -7, -7, -7, -6)
+
+[node name="couch" type="Sprite2D"]
+texture_filter = 1
+texture = SubResource("AtlasTexture_4pdkp")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 14)
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+material = SubResource("CanvasItemMaterial_aagqb")
+occluder = SubResource("OccluderPolygon2D_j282f")

@@ -1,0 +1,55 @@
+[gd_scene load_steps=6 format=3 uid="uid://oldrg1udibxa"]
+
+[ext_resource type="Script" path="res://assets/splash_screen_manager.gd" id="1_51etp"]
+[ext_resource type="PackedScene" uid="uid://c2v7yh6uevdk7" path="res://assets/light_and_shadow.tscn" id="2_3t1ad"]
+[ext_resource type="Texture2D" uid="uid://q62plai1f7ba" path="res://assets/logo_gamma_g3295.png" id="2_digkl"]
+[ext_resource type="Texture2D" uid="uid://chvm8hlbds03o" path="res://assets/g1142.png" id="3_4ox0x"]
+[ext_resource type="Texture2D" uid="uid://054wcws37unq" path="res://assets/logo-face.png" id="4_vhj5d"]
+
+[node name="Control" type="Control" node_paths=PackedStringArray("splash_screen_container")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_51etp")
+load_scene = ExtResource("2_3t1ad")
+splash_screen_container = NodePath("CenterContainer")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="curvy" type="TextureRect" parent="CenterContainer"]
+custom_minimum_size = Vector2(250, 100)
+layout_mode = 2
+texture = ExtResource("2_digkl")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="blocky" type="TextureRect" parent="CenterContainer"]
+custom_minimum_size = Vector2(250, 100)
+layout_mode = 2
+texture = ExtResource("3_4ox0x")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="me" type="TextureRect" parent="CenterContainer"]
+custom_minimum_size = Vector2(250, 250)
+layout_mode = 2
+texture = ExtResource("4_vhj5d")
+expand_mode = 3
+stretch_mode = 4
